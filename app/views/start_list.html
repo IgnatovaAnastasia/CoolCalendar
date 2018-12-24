@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CoolCalendar</title>
+    <link rel="stylesheet" href="mystyle.css" type="text/css">
+    <script type ="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function() {
+            $("#caltype").change(function() {
+                var text = $("#caltype").val();
+                if (text == "2") {
+                    $("#month").css('display','block');
+                    $("#year").css('display','none');
+                    $("#day").css('display','none');
+                }
+                else if (text == "1") {
+                    $("#month").css('display','none');
+                    $("#year").css('display','block');
+                    $("#day").css('display','none');
+                }
+                else if (text == "3") {
+                    $("#month").css('display','none');
+                    $("#year").css('display','none');
+                    $("#day").css('display','block');
+                }
+            });
+        })
+        
+    </script>
+</style>
+</head>
+<body>
+    <link rel="stylesheet" media="all"/>
+    <h2 style="text-align: center">CoolCalendar</h2>
+    <div class="bd_right bd_arrow fl_r">
+        <a class="bd_arrow_a" onclick="Calendar.calGetMonth(1)">&#8592;</a>
+        <a>текст</a>
+        <a class="bd_arrow_a" onclick="Calendar.calGetMonth(-1)">&#8594;</a>
+        <select id ="caltype" form="data">
+            <option value = "1">год</option>
+            <option selected value = "2">месяц</option>
+            <option value = "3">день</option>
+        </select>
+    </div>
+
+    <button><img src="vk.png" alt="VK" 
+          style="vertical-align: middle">
+    </button>
+    <br>
+    <form id="data" action="handler.php"></form>
+    <div id = "month">
+        <table width="60%" cellspacing="0" cellpadding="10" border="1">
+            <tr>
+                <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+        </table>
+    </div>
+    <br><br>
+    <div id = "year">
+        <table width="60%" cellspacing="0" cellpadding="10" border="1">
+            <tr>
+                <td>январь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>февраль
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>март
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>апрель
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>май
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>июнь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>июль
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>август
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>сентябрь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>октябрь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>ноябрь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>декабрь
+                    <table width="100%" cellspacing="0" cellpadding="10" border="1">
+                        <tr>
+                            <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table> 
+    </div>
+    <br><br>
+    <div id = "day">
+        <table width="60%" cellspacing="0" cellpadding="10" border="1">
+            <tr>
+                <td width = "11.5%">Время</td><td>Событие</td>
+            </tr>
+            <tr>
+                <td>00:00-02:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>02:00-04:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>04:00-06:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>06:00-08:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>08:00-10:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>10:00-12:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>12:00-14:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>14:00-16:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>16:00-18:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>18:00-20:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>20:00-22:00</td><td>2</td>
+            </tr>
+            <tr>
+                <td>22:00-24:00</td><td>2</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
