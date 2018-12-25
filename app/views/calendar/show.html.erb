@@ -13,7 +13,7 @@
 </div>
 <button><img src="images/vk.png" alt="VK" style="vertical-align: middle"></button><br/>
 <div id = "month">
-  <%= @month_calendar  %>
+  <%= get_month_calendar(Date.today.month,Date.today.year)  %>
 </div>
 <div id = "year">
   <%= @year_calendar  %>
