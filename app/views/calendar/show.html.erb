@@ -1,0 +1,23 @@
+<script type = "text/javascript" src = "assets/show.js"></script>
+
+<h2 style="text-align: center">CoolCalendar</h2>
+<div class="bd_right bd_arrow fl_r">
+  <a class="bd_arrow_a" onclick="Calendar.calGetMonth(1)">&#8592;</a>
+  <a>текст</a>
+  <a class="bd_arrow_a" onclick="Calendar.calGetMonth(-1)">&#8594;</a>
+  <select id ="caltype" form="data">
+    <option value = "1">год</option>
+    <option selected value = "2">месяц</option>
+    <option value = "3">день</option>
+  </select>
+</div>
+<button><img src="images/vk.png" alt="VK" style="vertical-align: middle"></button><br/>
+<div id = "month">
+  <%= @month_calendar  %>
+</div>
+<div id = "year">
+  <%= @year_calendar  %>
+</div>
+<div id = "day">
+  <%= @day_calendar  %>
+</div>
