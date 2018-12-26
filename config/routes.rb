@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get '/index', to: 'calendar#show'
+  resources :user
+
   get '/', to: 'calendar#show'
 end
