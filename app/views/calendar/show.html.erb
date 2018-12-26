@@ -1,4 +1,5 @@
 <script type = "text/javascript" src = "assets/show.js"></script>
+<link rel = "stylesheet" href = "assets/calendar_show.css" />
 
 <h2 style="text-align: center">CoolCalendar</h2>
 <div class="bd_right bd_arrow fl_r">
@@ -13,7 +14,7 @@
 </div>
 <button><img src="images/vk.png" alt="VK" style="vertical-align: middle"></button><br/>
 <div id = "month">
-  <%= get_month_calendar(Date.today.month,Date.today.year)  %>
+  <%= get_month_calendar(Date.today.month,Date.today.year).html_safe  %>
 </div>
 <div id = "year">
   <%= @year_calendar  %>

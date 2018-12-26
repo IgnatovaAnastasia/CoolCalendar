@@ -85,12 +85,14 @@ module CalendarHelper
           is_cur_month = false
         end
         item = d.nil? ? "" : "%2d" % d
-        if is_cur_month
-          html += "<td class = \"cur_month_day\">"
-        else
-          html += "<td class = \"no_cur_month_day\">"
+        if item != ""
+          if is_cur_month
+            html += "<td class = \"cur_month_day\">"
+          else
+            html += "<td class = \"no_cur_month_day\">"
+          end
+          html += item + "</td>"
         end
-        html += item + "</td>"
       end
       html += "</tr>\n"
     end
