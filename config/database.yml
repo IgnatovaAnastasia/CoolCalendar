@@ -46,5 +46,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: db/cool_calendar.sqlite3
+  adapter: postgresql
+  database: db
+  user: nikita
+  password: pass
+  host: localhost
