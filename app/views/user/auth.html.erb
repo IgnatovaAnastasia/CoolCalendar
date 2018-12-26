@@ -1,0 +1,11 @@
+<h1 style="text-align: center">Авторизация</h1>
+
+<%= form_with(model: @user, local: true, class: :pole) do |f| %>
+  <div style="text-align: center">
+    <label for="email">E-mail: </label>
+    <%= f.text_field :email %> <br/><br/>
+    <label for="password">Пароль: </label>
+    <%= f.password_field :password %> <br/><br/>
+    <%= f.submit("Войти!", class: "button") %>
+  </div>
+<% end %>
