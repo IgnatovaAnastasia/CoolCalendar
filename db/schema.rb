@@ -9,12 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-#
-#                 Описание:
-# Каждое событие принадлежит к некоторой категории
-# У каждого пользователя есть свои категории и события
 
-ActiveRecord::Schema.define(version: 2018_12_26_184450) do
+ActiveRecord::Schema.define(version: 2018_12_27_120848) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "category_id"
@@ -30,6 +26,12 @@ ActiveRecord::Schema.define(version: 2018_12_26_184450) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "people_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "category_id"
   end
 
   create_table "users", force: :cascade do |t|
