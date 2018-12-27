@@ -4,3 +4,43 @@ h2 {color: #4a76a8; font-size:30px}
 button{color: #ff0000; font-size:14px; text-align: center}
 label{font-size:18px; text-align: center; text-align-last: start; font-family: "Arial"}
 #year, #day {display: none;}
+.bd_arrow_a:hover {cursor: pointer;}
+
+table.main{
+    width: 100%;
+}
+td.calendar_checkbox{
+    /*background: black;*/
+    text-align: center;
+    width: 25%;
+}
+table.month_table {
+    width: 100%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    background: #E1E3E0;
+    border-radius: 20px;
+}
+th {
+    font-size: 22px;
+    font-weight: 300;
+    padding: 12px 15px;
+    border-bottom: 2px solid black;
+}
+tbody tr:nth-child(1) {
+    border-bottom: 2px solid /*#F56433*/#4a76a8;
+}
+td.no_cur_month_day{
+    color: #8D8173;
+}
+td.no_cur_month_day_holiday{
+    color: maroon;
+}
+td.cur_month_day_holiday{
+    color: red;
+}
+td {
+    padding: 10px;
+}

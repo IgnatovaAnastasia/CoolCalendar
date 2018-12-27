@@ -72,12 +72,13 @@ module CalendarHelper
     weeks
   end
   def get_month_calendar(month,year)
-    html = "<table id = \"month_table\">
+    html = "<table id = \"month_table\" class = \"month_table\">
             <tr id = \"month_header\"><td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td>сб</td><td>вс</td></tr>\n"
     weeks = month_and_year_to_matrix(month,year)
     is_cur_month = false
     weeks.each do |wk|
       html += "<tr>"
+      i = 1
       wk.each do |d|
         if not is_cur_month and d == 1
           is_cur_month = true
@@ -87,16 +88,63 @@ module CalendarHelper
         item = d.nil? ? "" : "%2d" % d
         if item != ""
           if is_cur_month
-            html += "<td class = \"cur_month_day\">"
+            if i > 5
+              html += "<td class = \"cur_month_day_holiday\">"
+            else
+              html += "<td class = \"cur_month_day\">"
+            end
           else
-            html += "<td class = \"no_cur_month_day\">"
+            if i > 5
+              html += "<td class = \"no_cur_month_day_holiday\">"
+            else
+              html += "<td class = \"no_cur_month_day\">"
+            end
           end
           html += item + "</td>"
+          i += 1
         end
       end
       html += "</tr>\n"
     end
     html += "</table>\n"
   end
+
+  def get_month_by_number(month)
+    res = ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь']
+    res[month-1]
+  end
+
+  def get_cur_month()
+    if request.GET['m'] == nil
+      Date.today.month
+    else
+      Integer(request.GET['m'])
+    end
+  end
+
+  def get_cur_year()
+    if request.GET['y'] == nil
+      Date.today.year
+    else
+      Integer(request.GET['y'])
+    end
+  end
+
+  def get_next_month(month)
+    if month == 12
+      return 1
+    else
+      return month + 1
+    end
+  end
+
+  def get_prev_month(month)
+    if month == 1
+      return 12
+    else
+      return month - 1
+    end
+  end
+
 end
 #print_calendar(12, 2018)
